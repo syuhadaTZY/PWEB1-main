@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <table align="center" width="30%">
+            <tr>
+                <td>User name</td>
+                <td><input type="text" name="txtuser" id="" placeholder="Jenengmu Le!...." pattern="[A-Za-z ]+"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="txtpass" id=""  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&amp;*]).{8,}"
+                            title="Minimal 8 karakter, huruf besar, huruf kecil, angka, dan simbol"
+                            required></td>
+            </tr>
+            
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td><input type="radio" name="LAWAN" id="">KINK 
+                    <input type="radio" name="LAWAN" id="">QUEEN</td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td><textarea name="txtalm" rows="5" cols="50"></textarea></td>
+            </tr>
+            <tr>
+                <td>Jurusan</td>
+                <td><select name="txtjur" id="">
+                    <optgroup label="FTD">
+                        <option value="TI">Teknik Informatika</option>
+                        <option value="SK">Sistem Komputer</option>
+                        <option value="DKV">Desain Komunikasi Visual</option>
+                    </optgroup>
+                    <optgroup label="FEB">
+                        <option value="AK">Akutansi</option>
+                        <option value="MAN">Management</option>
+                    </optgroup>
+                     </select></td>
+            </tr>
+            <tr>
+                <td>Usia</td>
+                <td><input type="number" name="txtumur" id="" min="18" max="100"></td>
+            </tr>
+            <tr>
+                <td>Tanggal Lahir</td>
+                <td><input type="date" name="txttanggal" id="" required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="kirim" name="cmdkirim">
+                <input type="reset" value="Batal"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
