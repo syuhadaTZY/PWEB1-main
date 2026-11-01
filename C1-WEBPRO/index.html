@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SyuhadaTZY — Automotive Journal</title>
+
+<style>
+/*  Bahan Utama PENGATURAN DASAR  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f6f3e9;
+    color: #000000;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 88%;
+    max-width: 1120px;
+    margin: auto;
+}
+
+/*  Bahan Judul  */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid #777568;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #FF0000;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+}
+
+nav a:hover {
+    color: #FF0000;
+}
+
+/*  Bahan BARIS 1 JURNAL  */
+.hero {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+    gap: 55px;
+    align-items: center;
+    padding: 65px 4% 60px;
+}
+
+.label {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #777568;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.label::before {
+    content: "● ";
+    color: #FF0000;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    font-weight: normal;
+}
+
+.hero h1 em {
+    color: #FF0000;
+}
+
+.hero-note h3 {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.hero-note p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #666457;
+    margin-bottom: 20px;
+}
+
+.link {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    border-bottom: 1px solid #777568;
+    padding-bottom: 5px;
+}
+
+/* Bahan BARIS 2 MENU Merah Kecil  */
+.ribbon {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 4%;
+    background: linear-gradient(90deg,
+    #660033,
+    #6e0030,
+    #75002e,
+    #7d002b,
+    #850029,
+    #8c0026,
+    #940024,
+    #9c0021,
+    #a3001f,
+    #ab001c,
+    #b2001a,
+    #ba0017,
+    #c20014,
+    #c90012,
+    #d1000f,
+    #d9000d,
+    #e0000a,
+    #e80008,
+    #f00005,
+    #f70003,
+    #ff0000);
+    border-top: 1px solid #B22222;
+    border-bottom: 1px solid #B22222;
+    overflow: hidden;
+}
+
+.ribbon span {
+    white-space: nowrap;
+    font-size: 17px;
+    font-style: italic;
+    color: #E6C88A;
+    text-shadow: 0 2px 8px rgba(14, 13, 13, 0.973);
+}
+
+/* Bahan BARIS 3 CATATAN OTOMOTIF */
+.feature {
+    display: grid;
+    grid-template-columns: 1.2fr 0.7fr;
+    gap: 12%;
+    align-items: center;
+    padding: 60px 4%;
+}
+
+.feature h2 {
+    font-size: 37px;
+    font-weight: normal;
+    line-height: 1.1;
+    margin-bottom: 16px;
+s {background-color: #ff0000; text-decoration: underline; text-decoration-color: #000000; }  
+}
+
+
+
+.lead {
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 18px;
+s {background-color: #ff0000; text-decoration: underline; text-decoration-color: #000000; }
+}
+
+.article-text {
+    font-size: 12px;
+    color: #656457;
+    line-height: 1.9;
+    margin-bottom: 14px;
+}
+
+.article-text::first-letter {
+    float: left;
+    font-size: 44px;
+    color: #FF0000;
+    padding-right: 7px;
+    line-height: 0.9;
+}
+
+.red-text {
+    color: #FF0000;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Bahan BARIS 3 KECIL CATATAN EDITOR */
+.spec-card {
+    background: #e8e8dd;
+    padding: 28px;
+    border-top: 2px solid #24352a;
+}
+
+.spec-card small {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #777568;
+}
+
+.spec-card h2 {
+    font-size: 65px;
+    margin: 20px 0 5px;
+}
+
+.spec-card h2 span {
+    color: #FF0000;
+}
+
+.spec-card .quote-text {
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.spec-card hr {
+    border: none;
+    border-top: 1px solid #c1c2b7;
+    margin: 20px 0;
+}
+
+.spec-card p {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.8;
+    color: #66675d;
+    margin-bottom: 10px;
+}
+
+.spec-card {
+    transition: 0.4s ease;
+}
+
+.spec-card:hover {
+    background-color: #e8e8dd; color: #ff0000;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+}
+
+/* Bahan BARIS 4 MENU Merah Besar */
+.quote {
+    background: linear-gradient(90deg,
+    #660033,
+    #6e0030,
+    #75002e,
+    #7d002b,
+    #850029,
+    #8c0026,
+    #940024,
+    #9c0021,
+    #a3001f,
+    #ab001c,
+    #b2001a,
+    #ba0017,
+    #c20014,
+    #c90012,
+    #d1000f,
+    #d9000d,
+    #e0000a,
+    #e80008,
+    #f00005,
+    #f70003,
+    #ff0000);
+    color: #f6f3e9;
+    text-align: center;
+    padding: 60px 5%;
+}
+
+.quote .label {
+    color: #c7c8b8;
+}
+
+.quote h2 {
+    font-size: clamp(25px, 4vw, 38px);
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+.quote h2 em {
+    color: #FFFF00;
+}
+
+.quote-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 35px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ffffff55;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+/* Bahan BARIS 5 PILIHAN EDITORIAL */
+.collection {
+    padding: 45px 4% 55px;
+}
+
+.collection-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.collection-heading p {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #777568;
+    text-transform: uppercase;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    padding: 28px 22px;
+    min-height: 180px;
+}
+
+.card:nth-child(1) {
+    background: #FF0000;
+    color: #000000;
+}
+
+.card:nth-child(2) {
+    background: #000000;
+    color: #fff8ee;
+}
+
+.card:nth-child(3) {
+    background: #e6e7dc;
+    color: #FF0000;
+}
+
+.card small {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.card h3 {
+    font-size: 34px;
+    margin: 22px 0 12px;
+    font-weight: normal;
+}
+
+.card:nth-child(2) h3 {
+    font-style: italic;
+}
+
+.card:nth-child(3) h3 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.card p {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.card {
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.card:nth-child(1):hover {
+    background: #FF0000; 
+
+    border-color: #E6C88A;
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 5px #ff3030,
+        0 0 15px #ff3030,
+        0 0 30px #ff0000cc;
+}
+
+.card:nth-child(2):hover {
+    background: #000000;
+
+    border-color: #E6C88A;
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 5px #a1a1a1,
+        0 0 15px #444444,
+        0 0 30px #000000c5;
+}
+
+.card:nth-child(3):hover {
+    background: #e6e7dc;
+
+    border-color: #E6C88A;
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 5px #ffffff,
+        0 0 15px #dddddd,
+        0 0 30px #ffffffb3;
+}
+
+
+.card:hover h2,
+.card:hover h3,
+.card:hover p {
+    background: linear-gradient(
+        90deg,
+        #ff1744,
+        #ff9100,
+        #ffee00,
+        #00e676,
+        #00b0ff,
+        #651fff,
+        #e040fb
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    transition: 0.4s ease;
+}
+
+/* Bahan BARIS 6 KOLEKSI KENDARAAN */
+.gallery {
+    padding: 45px 4%;
+    border-top: 1px solid #777568;
+}
+
+.gallery h2 {
+    font-size: 35px;
+    font-weight: normal;
+    margin: 12px 0;
+}
+
+.gallery-intro {
+    font-size: 13px;
+    color: #666457;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.cars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+
+
+.car {
+    border-bottom: 1px solid #777568;
+    padding-bottom: 18px;
+}
+
+
+.car img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+.car small {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #000000;
+}
+
+.car h3 {
+    font-size: 23px;
+    margin: 8px 0;
+}
+
+.car p {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.8;
+    color: #000000;
+}
+
+.cars {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+}
+
+.car {
+    min-width: 0;
+    padding: 12px;
+    text-align: center;
+    background: #e8e8dd;
+    border-bottom: 3px solid #030303;
+}
+
+/* Bahan Warna Kolom Mobil */
+.car:nth-child(1) {
+    background: linear-gradient(
+        145deg,
+        #001B54,
+        #0647A5,
+        #07112E
+    );
+    box-shadow: 0 8px 20px rgba(0, 40, 120, 0.4);
+    color: #FFFFFF;
+}
+
+
+.car:nth-child(2) {
+    background: linear-gradient(
+        145deg,
+        #34383D,
+        #777D83,
+        #17191D
+    );
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+}
+
+.car:nth-child(3) {
+    background: linear-gradient(
+        135deg,
+        #FFD43B,
+        #FF9417,
+        #FF5A00
+    );
+    box-shadow: 0 8px 20px rgba(255,148,23,0.45);
+    color: #FFFFFF;
+}
+
+.car:nth-child(4) {
+    background: linear-gradient(
+        135deg,
+        #f51823,
+        #E60019,
+        #69060c
+    );
+    box-shadow: 0 8px 20px rgba(230,0,25,0.4);
+    color: #FFFFFF;
+}
+
+.car {
+    transition: 0.4s ease;
+}
+
+.car:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+}
+
+/* Bahan Gambar Mobil */
+.car > img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: auto;
+}
+
+/* Bahan Logo merek mobil */
+.car .car-logo {
+    margin: 10px;
+    display: inline-block;
+    width: 40%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+br
+
+/* Bahan Tulisan dan deskripsi */
+.car h3 {
+    margin: auto 0;
+}
+
+.car small {
+     font-family: 'Georgia', serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #E6C88A;
+    text-shadow: 0 2px 8px rgba(14, 13, 13, 0.973);
+}
+
+.car p {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.9;
+    letter-spacing: 0.5px;
+    color: #000000;
+    text-align: center;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.35);
+    padding: 0 12px;
+}
+
+.car a {
+    display: inline-block;
+    font-size: 10px;
+    color:ivory;
+    margin-top: 8px;
+}
+
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+    .cars {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Bahan BARIS 7 MENGENAL/TENTANG SHOWROOM */
+.about {
+    border-top: 1px solid #777568;
+    padding: 50px 4%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.about h2 {
+    font-size: 35px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+
+.about p {
+    max-width: 500px;
+    font-size: 13px;
+    color: #666457;
+    line-height: 1.9;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+
+.about .label {
+    text-indent: 0;
+}
+
+
+.about-image {
+    width: 40%;
+    flex-shrink: 0;
+    margin-top: 150px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 520px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+    }
+
+    .about-text,
+    .about-image {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+}
+/* Bahan PENUTUP */
+.closing {
+    border-top: 1px solid #777568;
+    text-align: center;
+    padding: 45px 15px;
+}
+
+.closing small {
+    font-family: Arial, sans-serif;
+    color: #FF0000;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.closing h2 {
+    font-size: 28px;
+    line-height: 1.5;
+    font-weight: normal;
+    margin: 18px 0;
+}
+
+.closing h2 em {
+    color: #777568;
+}
+
+/* Bahan FOOTER */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 0;
+    border-top: 1px solid #777568;
+}
+
+footer p {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #777568;
+}
+
+/* Bahan pergerakan RESPONSIVE  */
+@media (max-width: 700px) {
+    .container {
+        width: 90%;
+    }
+
+    header {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .hero,
+    .feature {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(46px, 12vw, 68px);
+        letter-spacing: -2px;
+    }
+
+    .ribbon {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+
+    .feature h2 {
+        font-size: 32px;
+    }
+
+    .cards,
+    .cars {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: 150px;
+    }
+
+    .car img {
+        height: 230px;
+    }
+
+    .collection-heading {
+        flex-direction: column;
+    }
+
+    .quote-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- JUDUL -->
+<div class="container">
+<header>
+    <a href="#home" class="logo">
+        syuhada<span>TZY.</span>
+    </a>
+
+    <nav>
+        <a href="#cerita">Cerita</a>
+        <a href="#koleksi">Koleksi</a>
+        <a href="http://127.0.0.1:5500/PWEB1-main-main/C1-WEBPRO/produk.html">Galeri</a>
+        <a href="#tentang">Tentang</a>
+    </nav>
+
+    <a href="#kontak" class="link">Hubungi kami ↗</a>
+</header>
+
+<!-- BARIS 1 JURNAL -->
+<section class="hero" id="home">
+    <div>
+        <p class="label">Jurnal otomotif pilihan</p>
+
+        <h1>
+            Setiap mobil<br>
+            punya <em>ruang.</em>
+        </h1>
+    </div>
+
+    <div class="hero-note">
+        <h3>Ruang untuk impian berkendara</h3>
+
+        <p>
+            Sebuah tempat untuk menemukan karakter,
+            desain, dan pengalaman di balik mobil impian.
+            Setiap perjalanan memiliki ceritanya sendiri.
+        </p>
+
+        <a href="#koleksi" class="link">
+            Temukan koleksi <span>↗</span>
+        </a>
+    </div>
+</section>
+</div>
+
+<!-- BARIS 2 MENU Merah Kecil -->
+<div class="ribbon">
+    <span>Performa &amp; Presisi</span>
+    <span>✳</span>
+    <span>Bentuk &amp; Karakter</span>
+    <span>✳</span>
+    <span>Mesin &amp; Rasa</span>
+    <span>✳</span>
+    <span>Gaya Berkendara</span>
+</div>
+
+<div class="container">
+
+<!-- BARIS 3 CATATAN OTOMOTIF -->
+<section class="feature" id="cerita">
+    <article>
+        <p class="label">01 / Catatan otomotif</p>
+
+        <h2>
+            Seni menemukan<br>
+            jeda di tengah <s>riuh</s>.
+        </h2>
+
+        <p class="lead">
+            Tidak semua perjalanan harus <s>diburu</s>.
+            Nikmati setiap lekuk jalan.
+        </p>
+
+        <p class="article-text">
+            Sebuah mobil bukan sekadar kendaraan, melainkan perpaduan seni desain, teknologi, performa, dan gaya hidup. Setiap detail memiliki karakter tersendiri yang menciptakan pengalaman berkendara.
+        </p>
+
+        <p class="article-text">
+           Setiap kendaraan mencerminkan kepribadian, kebebasan, dan impian pemiliknya. Mulai dari desain sporty hingga interior elegan, semuanya memiliki daya tarik tersendiri.
+        </p>
+
+        <p class="article-text">
+            Teknologi otomotif terus berkembang dengan menghadirkan inovasi, kenyamanan, dan performa yang semakin mengesankan.
+        </p>
+
+        <p class="article-text">
+            Zona SyuhadaTZY hadir untuk mengenalkan dunia otomotif premium, menjelajahi berbagai pilihan kendaraan, dan menemukan mobil yang sesuai dengan impianmu.
+        </p>
+
+        <p class="article-text">
+            Yakinlah bahwa setiap perjalanan memiliki cerita. Temukan kendaraan impianmu dan wujudkan pengalaman berkendara yang luar biasa bersama SyuhadaTZY.
+        </p>
+
+        <p class="red-text">
+            Sebab perjalanan juga tentang menikmati proses.
+        </p>
+    </article>
+
+    <!-- BARIS 3 KECIL CATATAN EDITOR -->
+    <aside class="spec-card">
+        <small>Catatan editor</small>
+
+        <h2>Aa<span>.</span></h2>
+
+        <p class="quote-text">
+            Dua karakter berbeda.<br>
+            Satu cerita yang sama.
+        </p>
+
+        <hr>
+
+        <p>
+            <strong>DESAIN</strong><br>
+            Garis tegas, proporsi, dan detail yang berkarakter.
+        </p>
+
+        <p>
+            <strong>PERFORMA</strong><br>
+            Pengalaman berkendara yang membangkitkan rasa.
+        </p>
+
+        <hr>
+
+        <p>
+            Setiap detail memiliki cerita.
+            Setiap perjalanan punya makna.
+        </p>
+    </aside>
+</section>
+</div>
+
+<!-- BARIS 4 MENU Merah Besar -->
+<section class="quote">
+    <p class="label">02 / Filosofi perjalanan</p>
+
+    <h2>
+        Pelan-pelan bukan berarti tertinggal.<br>
+        Bisa jadi, kamu sedang<br>
+        <em>menikmati perjalanan.</em>
+    </h2>
+
+    <div class="quote-bottom">
+        <span>Catatan perjalanan otomotif</span>
+        <span>SyuhadaTZY Journal</span>
+    </div>
+</section>
+
+<div class="container">
+
+<!-- BARIS 5 PILIHAN EDITORIAL -->
+<section class="collection" id="koleksi">
+    <div class="collection-heading">
+        <p>03 / Pilihan editorial</p>
+        <p>Karakter untuk setiap perjalanan</p>
+    </div>
+
+    <div class="cards">
+        <article class="card">
+            <small>01 — PERFORMANCE</small>
+            <h3>performa</h3>
+            <p>
+                Tenaga, presisi, dan karakter
+                yang terasa di setiap perjalanan.
+            </p>
+        </article>
+
+        <article class="card">
+            <small>02 — DESIGN</small>
+            <h3>tumbuh.</h3>
+            <p>
+                Desain yang berani, detail yang matang,
+                dan gaya yang punya cerita.
+            </p>
+        </article>
+
+        <article class="card">
+            <small>03 — EXPERIENCE</small>
+            <h3>BERANI</h3>
+            <p>
+                Pilih kendaraan yang mencerminkan
+                karakter dan impianmu.
+            </p>
+        </article>
+    </div>
+</section>
+
+<!-- BARIS 6 KOLEKSI KENDARAAN -->
+<section class="gallery" id="galeri">
+    <p class="label">04 / Koleksi kendaraan</p>
+
+    <h2>Kata yang sama.<br><em>Rasa yang berbeda.</em></h2>
+
+    <p class="gallery-intro">
+        Kenali karakter setiap mobil dan temukan
+        kendaraan yang sesuai dengan perjalananmu.
+    </p>
+ 
+<div class="cars">
+
+    <article class="car">
+        <img src="image/buggati shw.jpg" alt="Bugatti">
+        <h3>
+            <img src="image/bgt_logo-removebg-preview.png"
+                 alt="Logo Bugatti" class="car-logo">
+        </h3>
+        <small>HYPERCAR</small>
+        <p>Mobil sport dengan desain berani dan dinamis.</p>
+        <p><b>Harga: Hubungi showroom</b></p>
+        <a href="#kontak">Tanyakan Detail ↗</a>
+    </article>
+
+    <article class="car">
+        <img src="image/lamborgini shw 2.jpg" alt="Lamborghini">
+        <h3>
+            <img src="image/lbr_logo-removebg-preview.png"
+                 alt="Logo Lamborghini" class="car-logo">
+        </h3>
+        <small>LUXURY COLLECTION</small>
+        <p>Perpaduan gaya elegan dan performa tinggi.</p>
+        <p><b>Harga: Hubungi showroom</b></p>
+        <a href="#kontak">Tanyakan Detail ↗</a>
+    </article>
+
+    <article class="car">
+        <img src="image/mc laren shw.jpg" alt="McLaren">
+        <h3>
+            <img src="image/mc_logo-removebg-preview.png"
+                 alt="Logo McLaren" class="car-logo">
+        </h3>
+        <small>SUPERCAR</small>
+        <p>Tampilan sporty dan eksklusif untuk pecinta otomotif.</p>
+        <p><b>Harga: Hubungi showroom</b></p>
+        <a href="#kontak">Tanyakan Detail ↗</a>
+    </article>
+
+    <article class="car">
+        <img src="image/ferrari shw.jpg" alt="Ferrari">
+        <h3>
+            <img src="image/fr_logo-removebg-preview.png"
+                 alt="Logo Ferrari" class="car-logo">
+        </h3>
+        <small>SPORTS CAR</small>
+        <p>Gaya premium dengan karakter tegas dan sporty.</p>
+        <p><b>Harga: Hubungi showroom</b></p>
+        <a href="#kontak">Tanyakan Detail ↗</a>
+    </article>
+
+</div>
+
+</section>
+
+<!-- BARIS 7 MENGENAL/TENTANG SHOWROOM -->
+<section class="about" id="tentang">
+
+    <div class="about-text">
+
+        <p class="label">05 / Mengenal showroom</p>
+
+        <h2>
+            Bukan sekadar mobil.<br>
+            <em>Sebuah pengalaman.</em>
+        </h2>
+
+        <p>
+            Showroom <span style="background-color: #000000;"><span style="color: #f51823;">Syuhada</span><span style="color: #f6f3e9;">TZY</span></span> adalah konsep ruang otomotif yang menggabungkan karakter
+            kendaraan, desain, teknologi, dan pengalaman pelanggan dalam satu kesatuan.
+            ami menghadirkan dunia otomotif sebagai tempat untuk mengenal berbagai pilihan
+            kendaraan dengan keunggulan dan ciri khas masing-masing
+        </p>
+        <br>
+        <p>
+            Kami percaya bahwa mobil impian bukan hanya tentang spesifikasi,
+            harga, atau performa mesin, tetapi juga tentang cerita, gaya hidup,
+            dan kebanggaan di balik setiap pilihan. Setiap kendaraan memiliki
+            daya tarik tersendiri yang mampu mencerminkan kepribadian pemiliknya.
+        </p>
+        <br>
+        <p>
+            Dunia otomotif terus berkembang dengan menghadirkan berbagai inovasi,
+            mulai dari desain modern, teknologi canggih, hingga performa mesin yang semakin mengesankan.
+            Hal inilah yang membuat setiap kendaraan memiliki nilai dan pengalaman berkendara yang berbeda.
+        </p>
+        <br>
+        <p>
+            Melalui <span style="background-color: #000000;"><span style="color: #f51823;">Syuhada</span><span style="color: #f6f3e9;">TZY</span></span>, kami ingin memberikan inspirasi bagi para pecinta otomotif untuk menjelajahi berbagai
+            desain kendaraan, mengenal keunggulan setiap mobil, dan menemukan pilihan yang sesuai dengan kebutuhan maupun impian mereka.
+        </p>
+        <br>
+        <p>
+            Bagi kami, setiap mobil memiliki cerita dan setiap perjalanan menyimpan pengalaman berharga.
+            <span style="background-color: #000000;"><span style="color: #f51823;">Syuhada</span><span style="color: #f6f3e9;">TZY</span></span> hadir untuk menjadi bagian dari perjalanan tersebut dengan menghadirkan inspirasi
+            otomotif yang modern, elegan, dan penuh karakter.
+        </p>
+
+    </div>
+
+    <div class="about-image">
+        <img src="image/Luxury POTRET.png" alt="Luxury Showroom SyuhadaTZY">
+    </div>
+
+</section>
+
+<!-- PENUTUP -->
+<section class="closing" id="kontak">
+    <small>RUANG UNTUK PERJALANAN BARU</small>
+
+    <h2>
+        Setiap perjalanan punya cerita.<br>
+        <em>Sekarang, tulis ceritamu.</em>
+    </h2>
+
+    <a href="http://127.0.0.1:5500/PWEB1-main-main/C1-WEBPRO/Utama.html">
+        Hubungi SyuhadaTZY ↗
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <a href="#home" class="logo">
+        syuhada<span>TZY.</span>
+    </a>
+
+    <p>Drive your dreams · Automotive journal</p>
+
+    <a href="#home" class="link">Kembali ke atas ↑</a>
+</footer>
+
+</div>
+</body>
+</html>
