@@ -1,0 +1,960 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lokasi Showroom | SyuhadaTZY</title>
+
+<style>
+
+/* =========================
+  Bahan Utama RESET DAN BACKGROUND
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
+body {
+    background: #fff;
+    color: #191919;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+  1 Bahan JUDUL HEADER BRAND
+========================= */
+
+header {
+    display: block;
+    text-align: center;
+    padding: 40px 15px;
+    background: #ffffff;
+}
+
+.logo {
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 7px;
+    color: #111111;
+}
+
+.logo span {
+    color: #a00028;
+}
+
+.logo small {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    letter-spacing: 9px;
+    color: #a00028;
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+/* =========================
+  2 Bahan NAVIGASI STICKY
+========================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+
+    padding: 16px;
+
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #222222;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #a00028;
+    transition: 0.4s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #a00028;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+/* =========================
+  3 Bahan Label Judul VISIT OUR
+========================= */
+
+.hero {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    min-height: 430px;
+    background: #f8f7f5;
+}
+
+.hero-content {
+    padding: 75px 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.label {
+    color: #a00028;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 5vw, 65px);
+    font-weight: normal;
+    line-height: 1.08;
+    margin-bottom: 22px;
+}
+
+.hero h1 em {
+    color: #a00028;
+}
+
+.hero p {
+    max-width: 480px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+/* TOMBOL */
+.hero-button {
+    display: inline-block;
+    width: fit-content;
+    margin-top: 28px;
+    padding: 15px 25px;
+    background: #a00028;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+
+.hero-button:hover {
+    background: #171717;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(160,0,40,0.2);
+}
+
+/* GAMBAR */
+.hero-image {
+    min-height: 430px;
+    position: relative;
+    background:
+        linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.25)),
+        url("image/Luxury POTRET.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-image::after {
+    content: "SYUHADATZY / SHOWROOM LOCATION";
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 8px #000;
+}
+
+/* =========================
+  4 Bahan SECTION HEADING OUR LOCATION
+========================= */
+
+.section-heading {
+    padding: 75px 7% 35px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.section-heading h2 em {
+    color: #a00028;
+}
+
+/* =========================
+  5 Bahan LOCATION INFORMATION
+========================= */
+
+.location-section {
+    padding: 0 7% 80px;
+}
+
+.location-container {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 30px;
+}
+
+/* LOCATION CARD */
+
+.location-info {
+    background: #202020;
+    color: white;
+    padding: 38px;
+    position: relative;
+    overflow: hidden;
+}
+
+.location-info::after {
+    content: "ST";
+    position: absolute;
+    right: -15px;
+    bottom: -50px;
+    font-family: Georgia, serif;
+    font-size: 180px;
+    color: rgba(255,255,255,0.035);
+    pointer-events: none;
+}
+
+.location-info h3 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 12px;
+    color: #d6b56d;
+}
+
+.location-info .description {
+    color: #bbb;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.info-item {
+    padding: 20px 0;
+    border-top: 1px solid #444;
+    position: relative;
+    z-index: 1;
+}
+
+.info-item h4 {
+    color: #d6b56d;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    color: #eee;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.direction-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 22px;
+    background: #a00028;
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.4s;
+    position: relative;
+    z-index: 1;
+}
+
+.direction-button:hover {
+    background: #d6b56d;
+    color: #171717;
+    transform: translateY(-4px);
+}
+
+/* =========================
+  5 Bahan GOOGLE MAPS
+========================= */
+
+.map-container {
+    min-height: 550px;
+    border: 1px solid #dedbd5;
+    padding: 12px;
+    background: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 525px;
+    border: none;
+    filter: grayscale(20%);
+}
+
+.map-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px 3px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.map-caption span {
+    color: #a00028;
+    font-weight: bold;
+}
+
+/* =========================
+  6 Bahan OPENING HOURS
+========================= */
+
+.hours-section {
+    padding: 70px 7%;
+    background: #f8f7f5;
+}
+
+.hours-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hours-heading h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-weight: normal;
+}
+
+.hours-heading h2 em {
+    color: #a00028;
+}
+
+.hours-heading p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+.hours-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 35px 45px;
+    background: white;
+    border: 1px solid #e5e0d8;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 19px 0;
+    border-bottom: 1px solid #e9e5df;
+    font-size: 13px;
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+.hours-item strong {
+    font-weight: 600;
+}
+
+.hours-item span {
+    color: #777;
+}
+
+.hours-item .closed {
+    color: #a00028;
+    font-weight: bold;
+}
+
+/* =========================
+  7 Bahan FACILITIES
+========================= */
+
+.facilities {
+    padding: 75px 7%;
+}
+
+.facilities-heading {
+    margin-bottom: 35px;
+}
+
+.facilities-heading h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-weight: normal;
+}
+
+.facilities-heading h2 em {
+    color: #a00028;
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.facility-card {
+    padding: 32px 25px;
+    border: 1px solid #dedbd5;
+    background: white;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.facility-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #a00028;
+    transition: 0.4s;
+}
+
+.facility-card:hover::before {
+    width: 100%;
+}
+
+.facility-card:hover {
+    transform: translateY(-8px);
+    border-color: #a00028;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.facility-number {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    color: #c7b58e;
+    margin-bottom: 18px;
+}
+
+.facility-card h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.facility-card p {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* =========================
+  7 Bahan QUOTE EXPERIENCE
+========================= */
+
+.quote {
+    padding: 65px 10%;
+    background: #202020;
+    color: white;
+    text-align: center;
+}
+
+.quote h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.quote h2 em {
+    color: #d6b56d;
+}
+
+.quote p {
+    margin-top: 18px;
+    color: #bbb;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+/* =========================
+  8 Bahan FOOTER
+========================= */
+
+footer {
+    padding: 30px 7%;
+    background: #111;
+    color: #aaa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 11px;
+}
+
+.footer-logo {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.footer-logo span {
+    color: #a00028;
+}
+
+footer p {
+    letter-spacing: 1px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        min-height: 350px;
+    }
+
+    .location-container {
+        grid-template-columns: 1fr;
+    }
+
+    .facility-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .logo {
+        font-size: 35px;
+    }
+
+    .logo small {
+        font-size: 14px;
+        letter-spacing: 5px;
+    }
+
+    nav {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .section-heading h2,
+    .hours-heading h2,
+    .facilities-heading h2 {
+        font-size: 30px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .logo {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero-content {
+        padding: 55px 7%;
+    }
+
+    .location-info {
+        padding: 27px;
+    }
+
+    .map-container {
+        min-height: 350px;
+    }
+
+    .map-container iframe {
+        min-height: 330px;
+    }
+
+    .hours-container {
+        padding: 20px;
+    }
+
+    .hours-item {
+        font-size: 11px;
+        gap: 10px;
+    }
+
+    .facility-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 1 HEADER BRAND -->
+
+<header>
+
+    <div class="logo">
+        SYUHADA<span>TZY</span>
+        <small>SHOWROOM LOCATION</small>
+    </div>
+
+</header>
+
+<!-- 2 NAVIGASI STICKY -->
+
+<nav>
+
+    <a href="Utama.html">HOME</a>
+        <a href="index.html">ABOUT</a>
+        <a href="Utama.html#gallery">GALLERY</a>
+        <a href="produk.html">PRODUCT</a>
+        <a href="spek.html">SPECIFICATION</a>
+        <a href="#lokk">LOCATION</a>
+        <a href="berita.html">NEWS</a>
+        <a href="layanan.html">SERVICE</a>
+        <a href="booking.html">BOOKING</a>
+        <a href="Utama.html#kontak">CONTACT</a>
+
+</nav>
+
+<!-- 3 ARTIKEL UTAMA -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="label">01 / FIND OUR SHOWROOM</div>
+
+        <h1>
+            Visit Our<br>
+            <em>Showroom.</em>
+        </h1>
+
+        <p>
+            Temukan lokasi Showroom SyuhadaTZY dan rasakan
+            pengalaman otomotif premium secara langsung.
+            Kami siap menyambut Anda untuk melihat berbagai
+            koleksi kendaraan pilihan dan mendapatkan
+            pelayanan terbaik dari tim kami.
+        </p>
+
+        <a href="#lokk" class="hero-button">
+            TEMUKAN LOKASI →
+        </a>
+
+    </div>
+
+    <div class="hero-image"></div>
+
+</section>
+
+<!-- 4 LOCATION -->
+
+<section class="location-section" id="lokk">
+
+    <div class="section-heading">
+
+        <div class="label">02 / OUR LOCATION</div>
+
+        <h2>
+            Find Us <em>Here.</em>
+        </h2>
+
+    </div>
+
+    <div class="location-container">
+
+        <!-- LOCATION INFO -->
+
+        <div class="location-info">
+
+            <h3>SyuhadaTZY Showroom</h3>
+
+            <p class="description">
+                Kunjungi showroom kami untuk melihat koleksi
+                kendaraan dan mendapatkan pengalaman
+                otomotif yang lebih dekat.
+            </p>
+
+            <div class="info-item">
+                <h4>SHOWROOM ADDRESS</h4>
+                <p>
+                    Showroom SYUHADATZY<br>
+                    [Malang, Jatim, Indonesia]
+                </p>
+            </div>
+
+            <div class="info-item">
+                <h4>CONTACT NUMBER</h4>
+                <p>
+                    0812-3456-7890
+                </p>
+            </div>
+
+            <div class="info-item">
+                <h4>EMAIL ADDRESS</h4>
+                <p>
+                    info@syuhadatzy.com
+                </p>
+            </div>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Showroom+SyuhadaTZY"
+                target="_blank"
+                rel="noopener"
+                class="direction-button">
+                GET DIRECTIONS →
+            </a>
+
+        </div>
+
+        <!-- GOOGLE MAPS -->
+
+        <div class="map-container">
+
+            <iframe
+                src="https://maps.google.com/maps?q=Showroom%20SyuhadaTZY%20Indonesia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <div class="map-caption">
+                <strong>SHOWROOM LOCATION</strong>
+                <span>GOOGLE MAPS ↗</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--5  OPENING HOURS -->
+
+<section class="hours-section">
+
+    <div class="hours-heading">
+
+        <div class="label">03 / VISIT OUR SHOWROOM</div>
+
+        <h2>
+            Opening <em>Hours.</em>
+        </h2>
+
+        <p>
+            Kami siap menyambut kunjungan Anda
+            sesuai jadwal operasional showroom.
+        </p>
+
+    </div>
+
+    <div class="hours-container">
+
+        <div class="hours-item">
+            <strong>Senin</strong>
+            <span>09.00 - 17.00 WIB</span>
+        </div>
+
+        <div class="hours-item">
+            <strong>Selasa</strong>
+            <span>09.00 - 17.00 WIB</span>
+        </div>
+
+        <div class="hours-item">
+            <strong>Rabu</strong>
+            <span>09.00 - 17.00 WIB</span>
+        </div>
+
+        <div class="hours-item">
+            <strong>Kamis</strong>
+            <span>09.00 - 17.00 WIB</span>
+        </div>
+
+        <div class="hours-item">
+            <strong>Jumat</strong>
+            <span>09.00 - 17.00 WIB</span>
+        </div>
+
+        <div class="hours-item">
+            <strong>Sabtu</strong>
+            <span>09.00 - 17.00 WIB</span>
+        </div>
+
+        <div class="hours-item">
+            <strong>Minggu</strong>
+            <span class="closed">Tutup</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 7 EXPLORE OUR FACILITIES  -->
+
+<section class="facilities">
+
+    <div class="facilities-heading">
+
+        <div class="label">04 / SHOWROOM EXPERIENCE</div>
+
+        <h2>
+            Explore Our <em>Facilities.</em>
+        </h2>
+
+    </div>
+
+    <div class="facility-grid">
+
+        <article class="facility-card">
+
+            <div class="facility-number">01</div>
+
+            <h3>Premium Display</h3>
+
+            <p>
+                Area display kendaraan dengan suasana
+                elegan untuk melihat koleksi mobil
+                secara lebih dekat.
+            </p>
+
+        </article>
+
+        <article class="facility-card">
+
+            <div class="facility-number">02</div>
+
+            <h3>Customer Lounge</h3>
+
+            <p>
+                Area nyaman bagi pelanggan untuk
+                berkonsultasi dan mendapatkan
+                informasi mengenai kendaraan.
+            </p>
+
+        </article>
+
+        <article class="facility-card">
+
+            <div class="facility-number">03</div>
+
+            <h3>Personal Consultation</h3>
+
+            <p>
+                Layanan konsultasi bersama tim kami
+                untuk membantu menemukan kendaraan
+                sesuai kebutuhan Anda.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- 8 QUOTE EXPERIENCE -->
+
+<section class="quote">
+
+    <h2>
+        Experience The Difference.<br>
+        <em>Discover Your Dream Car.</em>
+    </h2>
+
+    <p>SYUHADATZY — AUTOMOTIVE EXPERIENCE</p>
+
+</section>
+
+<!-- 9 FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        SYUHADA<span>TZY</span>
+    </div>
+
+    <p>
+        DRIVE YOUR DREAM. EXPERIENCE THE DIFFERENCE.
+    </p>
+
+    <p>
+        © 2026 SyuhadaTZY. All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>
