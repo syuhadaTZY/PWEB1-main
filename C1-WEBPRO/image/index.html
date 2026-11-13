@@ -1,0 +1,1145 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SyuhadaTZY — Automotive Journal</title>
+
+<style>
+/* =================================
+   1. PENGATURAN DASAR
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ffffff;
+    color: #171717;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =================================
+   2. HEADER DAN NAVIGASI
+================================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid #e5e0dc;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: #171717;
+}
+
+.logo span {
+    color: crimson;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #555;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #c00025;
+}
+
+.link {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #c00025;
+    padding-bottom: 6px;
+    transition: 0.3s;
+}
+
+.link:hover {
+    color: #c00025;
+    letter-spacing: 2px;
+}
+
+/* =================================
+   3. HERO SECTION
+================================= */
+.hero {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+    gap: 55px;
+    align-items: center;
+    padding: 90px 4% 85px;
+}
+
+.label {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #a00020;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+
+.label::before {
+    content: "● ";
+    color: #c00025;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    font-weight: normal;
+    color: #171717;
+}
+
+.hero h1 em {
+    color: #c00025;
+}
+
+.hero-note {
+    border-left: 2px solid #c00025;
+    padding-left: 25px;
+}
+
+.hero-note h3 {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+.hero-note p {
+    font-size: 13px;
+    line-height: 2;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* =================================
+   4. RIBBON / BARIS MOTTO
+================================= */
+.ribbon {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    padding: 17px 4%;
+    background: linear-gradient(100deg, #520013, #a00025, #e00030);
+    overflow: hidden;
+}
+
+.ribbon span {
+    white-space: nowrap;
+    font-size: 15px;
+    font-style: italic;
+    color: #f6dca1;
+    text-shadow: 0 2px 8px #00000070;
+}
+
+/* =================================
+   5. FEATURE / CATATAN OTOMOTIF
+================================= */
+.feature {
+    display: grid;
+    grid-template-columns: 1.2fr 0.7fr;
+    gap: 12%;
+    align-items: center;
+    padding: 80px 4%;
+}
+
+.feature h2 {
+    font-size: 39px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.feature h2 s,
+.lead s {
+    background: #fff0f2;
+    color: #c00025;
+    text-decoration-color: #c00025;
+}
+
+.lead {
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 22px;
+    color: #333;
+}
+
+.article-text {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #666;
+    line-height: 2;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.article-text::first-letter {
+    float: left;
+    font-family: Georgia, serif;
+    font-size: 43px;
+    color: #c00025;
+    padding-right: 7px;
+    line-height: 0.9;
+}
+
+.red-text {
+    color: #c00025;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* =================================
+   6. EDITORIAL CARD
+================================= */
+.spec-card {
+    background: #faf8f6;
+    padding: 32px;
+    border-top: 3px solid #c00025;
+    box-shadow: 0 12px 35px #0000000d;
+    transition: 0.4s ease;
+}
+
+.spec-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px #00000018;
+    background: #fff;
+
+}
+
+.card:nth-child(3):hover {
+    background: #e6e7dc;
+
+    border-color: #E6C88A;
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 5px #ffffff,
+        0 0 15px #dddddd,
+        0 0 30px #ffffffb3;
+}
+
+
+.card:hover h2,
+.card:hover h3,
+.card:hover p {
+    background: linear-gradient(
+        90deg,
+        #ff1744,
+        #ff9100,
+        #ffee00,
+        #00e676,
+        #00b0ff,
+        #651fff,
+        #e040fb
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    transition: 0.4s ease;
+}
+
+.spec-card small {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.spec-card h2 {
+    font-size: 70px;
+    margin: 20px 0 5px;
+}
+
+.spec-card h2 span {
+    color: #c00025;
+}
+
+.spec-card .quote-text {
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.spec-card hr {
+    border: none;
+    border-top: 1px solid #e5e0dc;
+    margin: 22px 0;
+}
+
+.spec-card p {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.9;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+/* =================================
+   7. QUOTE / FILOSOFI
+================================= */
+.quote {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(110deg, #500014, #92001f, #d0002b);
+    color: #fff;
+    text-align: center;
+    padding: 75px 5%;
+}
+
+.quote::before {
+    content: "ST";
+    position: absolute;
+    font-size: 220px;
+    font-weight: bold;
+    color: #ffffff0a;
+    right: 5%;
+    bottom: -70px;
+    pointer-events: none;
+}
+
+.quote .label {
+    color: #f2d5d5;
+}
+
+.quote h2 {
+    position: relative;
+    font-size: clamp(25px, 4vw, 40px);
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.quote h2 em {
+    color: #ffdb83;
+}
+
+.quote-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 40px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ffffff50;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* =================================
+   8. PILIHAN EDITORIAL
+================================= */
+.collection {
+    padding: 75px 4%;
+}
+
+.collection-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.collection-heading p {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    padding: 32px 25px;
+    min-height: 210px;
+    border: 1px solid transparent;
+    transition: 0.4s ease;
+}
+
+.card:nth-child(1) {
+    background: linear-gradient(145deg, #a90025, #e00030);
+    color: white;
+}
+
+.card:nth-child(2) {
+    background: linear-gradient(145deg, #151515, #333);
+    color: white;
+}
+
+.card:nth-child(3) {
+    background: linear-gradient(145deg, #f6f4f0, #e6e1d8);
+    color: #222;
+}
+
+.card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 15px 30px #00000025;
+    border-color: #d4ad67;
+}
+
+.card small {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.card h3 {
+    font-size: 35px;
+    margin: 25px 0 13px;
+    font-weight: normal;
+}
+
+.card:nth-child(2) h3 {
+    font-style: italic;
+}
+
+.card:nth-child(3) h3 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 27px;
+}
+
+.card p {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+/* =================================
+   9. GALERI KENDARAAN
+================================= */
+.gallery {
+    padding: 70px 4%;
+    border-top: 1px solid #e5e0dc;
+}
+
+.gallery h2 {
+    font-size: 39px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.gallery h2 em {
+    color: #c00025;
+}
+
+.gallery-intro {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #777;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.cars {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.car {
+    min-width: 0;
+    padding: 13px 13px 22px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e9e4df;
+    border-bottom: 3px solid #a00025;
+    box-shadow: 0 8px 25px #0000000c;
+    transition: 0.4s ease;
+    overflow: hidden;
+}
+
+.car:hover {
+    transform: translateY(-10px);
+    border-color: #d4ad67;
+    box-shadow: 0 18px 35px #00000020;
+}
+
+.car > img {
+    display: block;
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: 0.5s ease;
+}
+
+.car:hover > img {
+    transform: scale(1.04);
+}
+
+.car h3 {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car .car-logo {
+    display: block;
+    width: 42%;
+    max-width: 120px;
+    height: 55px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.car small {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #a00025;
+    margin: 10px 0;
+}
+
+.car p {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.9;
+    color: #666;
+    margin: 8px 0;
+    padding: 0 5px;
+}
+
+.car p b {
+    color: #222;
+}
+
+.car a {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: #a00025;
+    margin-top: 10px;
+    border-bottom: 1px solid #a00025;
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+.car a:hover {
+    color: #d4ad67;
+    border-color: #d4ad67;
+    letter-spacing: 1px;
+}
+
+/* =================================
+   10. TENTANG SHOWROOM
+================================= */
+.about {
+    border-top: 1px solid #e5e0dc;
+    padding: 75px 4%;
+    display: flex;
+    align-items: stretch;
+    gap: 45px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.about h2 {
+    font-size: 39px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.about h2 em {
+    color: #c00025;
+}
+
+.about p {
+    font-family: Arial, sans-serif;
+    max-width: 650px;
+    font-size: 12px;
+    color: #666;
+    line-height: 2;
+    text-align: justify;
+    text-indent: 20px;
+    margin-bottom: 15px;
+}
+
+.about .label {
+    text-indent: 0;
+}
+
+.about-image {
+    width: 42%;
+    flex-shrink: 0;
+    display: flex;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 12px 12px 0 #f0e7e2;
+    transition: 0.4s ease;
+}
+
+.about-image img:hover {
+    transform: translateY(-6px);
+    box-shadow: 12px 18px 25px #00000020;
+}
+
+/* =================================
+   11. PENUTUP
+================================= */
+.closing {
+    border-top: 1px solid #e5e0dc;
+    text-align: center;
+    padding: 75px 15px;
+    background: #faf8f6;
+}
+
+.closing small {
+    font-family: Arial, sans-serif;
+    color: #a00025;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.closing h2 {
+    font-size: clamp(25px, 4vw, 36px);
+    line-height: 1.5;
+    font-weight: normal;
+    margin: 20px 0 30px;
+}
+
+.closing h2 em {
+    color: #a00025;
+}
+
+.closing a {
+    display: inline-block;
+    background: #a00025;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 14px 25px;
+    transition: 0.3s;
+}
+
+.closing a:hover {
+    background: #171717;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px #00000025;
+}
+
+/* =================================
+   12. FOOTER
+================================= */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 0;
+    border-top: 1px solid #e5e0dc;
+}
+
+footer p {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #888;
+}
+
+/* =================================
+   13. RESPONSIVE TABLET
+================================= */
+@media (max-width: 950px) {
+    .cars {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-image {
+        width: 40%;
+    }
+}
+
+/* =================================
+   14. RESPONSIVE HP
+================================= */
+@media (max-width: 700px) {
+    .container {
+        width: 90%;
+    }
+
+    header {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+    .hero,
+    .feature {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 50px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(45px, 12vw, 65px);
+        letter-spacing: -2px;
+    }
+
+    .ribbon {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+
+    .feature h2,
+    .gallery h2,
+    .about h2 {
+        font-size: 31px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cars {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .car > img {
+        height: 140px;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+    .about-image img {
+        min-height: 300px;
+        height: 350px;
+    }
+
+    .collection-heading {
+        flex-direction: column;
+    }
+
+    .quote-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 420px) {
+    .cars {
+        grid-template-columns: 1fr;
+    }
+
+    .car > img {
+        height: 200px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="container">
+<header>
+    <a href="#home" class="logo">
+        syuhada<span>TZY.</span>
+    </a>
+
+    <nav>
+        <a href="Utama.html">HOME</a>
+        <a href="#cerita">Cerita</a>
+        <a href="#koleksi">Koleksi</a>
+        <a href="produk.html">Product</a>
+        <a href="#tentang">Tentang</a>
+    </nav>
+
+    <a href="Utama.html#kontak" class="link">Hubungi kami ↗</a>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div>
+        <p class="label">Jurnal otomotif pilihan</p>
+        <h1>
+            Setiap mobil<br>
+            punya <em>ruang.</em>
+        </h1>
+    </div>
+
+    <div class="hero-note">
+        <h3>Ruang untuk impian berkendara</h3>
+        <p>
+            Sebuah tempat untuk menemukan karakter,
+            desain, dan pengalaman di balik mobil impian.
+            Setiap perjalanan memiliki ceritanya sendiri.
+        </p>
+        <a href="#koleksi" class="link">
+            Temukan koleksi ↗
+        </a>
+    </div>
+</section>
+</div>
+
+<!-- RIBBON -->
+<div class="ribbon">
+    <span>Performa &amp; Presisi</span>
+    <span>✳</span>
+    <span>Bentuk &amp; Karakter</span>
+    <span>✳</span>
+    <span>Mesin &amp; Rasa</span>
+    <span>✳</span>
+    <span>Gaya Berkendara</span>
+</div>
+
+<div class="container">
+
+<!-- CATATAN OTOMOTIF -->
+<section class="feature" id="cerita">
+    <article>
+        <p class="label">01 / Catatan otomotif</p>
+
+        <h2>
+            Seni menemukan<br>
+            jeda di tengah <s>riuh</s>.
+        </h2>
+
+        <p class="lead">
+            Tidak semua perjalanan harus <s>diburu</s>.
+            Nikmati setiap lekuk jalan.
+        </p>
+
+        <p class="article-text">
+            Sebuah mobil bukan sekadar kendaraan, melainkan perpaduan seni desain, teknologi, performa, dan gaya hidup. Setiap detail memiliki karakter tersendiri yang menciptakan pengalaman berkendara.
+        </p>
+
+        <p class="article-text">
+            Setiap kendaraan mencerminkan kepribadian, kebebasan, dan impian pemiliknya. Mulai dari desain sporty hingga interior elegan, semuanya memiliki daya tarik tersendiri.
+        </p>
+
+        <p class="article-text">
+            Teknologi otomotif terus berkembang dengan menghadirkan inovasi, kenyamanan, dan performa yang semakin mengesankan.
+        </p>
+
+        <p class="article-text">
+            Zona SyuhadaTZY hadir untuk mengenalkan dunia otomotif premium, menjelajahi berbagai pilihan kendaraan, dan menemukan mobil yang sesuai dengan impianmu.
+        </p>
+
+        <p class="article-text">
+            Yakinlah bahwa setiap perjalanan memiliki cerita. Temukan kendaraan impianmu dan wujudkan pengalaman berkendara yang luar biasa bersama SyuhadaTZY.
+        </p>
+
+        <p class="red-text">
+            Sebab perjalanan juga tentang menikmati proses.
+        </p>
+    </article>
+
+    <!-- CATATAN EDITOR -->
+    <aside class="spec-card">
+        <small>CATATAN EDITOR</small>
+        <h2>Aa<span>.</span></h2>
+
+        <p class="quote-text">
+            Dua karakter berbeda.<br>
+            Satu cerita yang sama.
+        </p>
+
+        <hr>
+
+        <p>
+            <strong>DESAIN</strong><br>
+            Garis tegas, proporsi, dan detail yang berkarakter.
+        </p>
+
+        <p>
+            <strong>PERFORMA</strong><br>
+            Pengalaman berkendara yang membangkitkan rasa.
+        </p>
+
+        <hr>
+
+        <p>
+            Setiap detail memiliki cerita.
+            Setiap perjalanan punya makna.
+        </p>
+    </aside>
+</section>
+</div>
+
+<!-- FILOSOFI -->
+<section class="quote">
+    <p class="label">02 / Filosofi perjalanan</p>
+
+    <h2>
+        Pelan-pelan bukan berarti tertinggal.<br>
+        Bisa jadi, kamu sedang<br>
+        <em>menikmati perjalanan.</em>
+    </h2>
+
+    <div class="quote-bottom">
+        <span>Catatan perjalanan otomotif</span>
+        <span>SyuhadaTZY Journal</span>
+    </div>
+</section>
+
+<div class="container">
+
+<!-- PILIHAN EDITORIAL -->
+<section class="collection" id="koleksi">
+    <div class="collection-heading">
+        <p>03 / Pilihan editorial</p>
+        <p>Karakter untuk setiap perjalanan</p>
+    </div>
+
+    <div class="cards">
+        <article class="card">
+            <small>01 — PERFORMANCE</small>
+            <h3>performa</h3>
+            <p>
+                Tenaga, presisi, dan karakter
+                yang terasa di setiap perjalanan.
+            </p>
+        </article>
+
+        <article class="card">
+            <small>02 — DESIGN</small>
+            <h3>tumbuh.</h3>
+            <p>
+                Desain yang berani, detail yang matang,
+                dan gaya yang punya cerita.
+            </p>
+        </article>
+
+        <article class="card">
+            <small>03 — EXPERIENCE</small>
+            <h3>BERANI</h3>
+            <p>
+                Pilih kendaraan yang mencerminkan
+                karakter dan impianmu.
+            </p>
+        </article>
+    </div>
+</section>
+
+<!-- GALERI MOBIL -->
+<section class="gallery" id="galeri">
+    <p class="label">04 / Koleksi kendaraan</p>
+
+    <h2>
+        Kata yang sama.<br>
+        <em>Rasa yang berbeda.</em>
+    </h2>
+
+    <p class="gallery-intro">
+        Kenali karakter setiap mobil dan temukan
+        kendaraan yang sesuai dengan perjalananmu.
+    </p>
+
+    <div class="cars">
+
+        <article class="car">
+            <img src="image/buggati shw.jpg" alt="Bugatti">
+
+            <h3>
+                <img src="image/bgt_logo-removebg-preview.png"
+                     alt="Logo Bugatti" class="car-logo">
+            </h3>
+
+            <small>HYPERCAR</small>
+            <p>Mobil sport dengan desain berani dan dinamis.</p>
+            <p><b>Harga: Hubungi showroom</b></p>
+            <a href="#kontak">Tanyakan Detail ↗</a>
+        </article>
+
+        <article class="car">
+            <img src="image/lamborgini shw 2.jpg" alt="Lamborghini">
+
+            <h3>
+                <img src="image/lbr_logo-removebg-preview.png"
+                     alt="Logo Lamborghini" class="car-logo">
+            </h3>
+
+            <small>LUXURY COLLECTION</small>
+            <p>Perpaduan gaya elegan dan performa tinggi.</p>
+            <p><b>Harga: Hubungi showroom</b></p>
+            <a href="#kontak">Tanyakan Detail ↗</a>
+        </article>
+
+        <article class="car">
+            <img src="image/mc laren shw.jpg" alt="McLaren">
+
+            <h3>
+                <img src="image/mc_logo-removebg-preview.png"
+                     alt="Logo McLaren" class="car-logo">
+            </h3>
+
+            <small>SUPERCAR</small>
+            <p>Tampilan sporty dan eksklusif untuk pecinta otomotif.</p>
+            <p><b>Harga: Hubungi showroom</b></p>
+            <a href="#kontak">Tanyakan Detail ↗</a>
+        </article>
+
+        <article class="car">
+            <img src="image/ferrari shw.jpg" alt="Ferrari">
+
+            <h3>
+                <img src="image/fr_logo-removebg-preview.png"
+                     alt="Logo Ferrari" class="car-logo">
+            </h3>
+
+            <small>SPORTS CAR</small>
+            <p>Gaya premium dengan karakter tegas dan sporty.</p>
+            <p><b>Harga: Hubungi showroom</b></p>
+            <a href="#kontak">Tanyakan Detail ↗</a>
+        </article>
+
+    </div>
+</section>
+
+</div>
+
+<!-- TENTANG SHOWROOM -->
+<section class="about" id="tentang">
+
+    <div class="about-text">
+        <p class="label">05 / Mengenal showroom</p>
+
+        <h2>
+            Bukan sekadar mobil.<br>
+            <em>Sebuah pengalaman.</em>
+        </h2>
+
+        <p>
+            Showroom <span style="background:#171717; padding:2px 5px;">
+            <span style="color:#f51823;">Syuhada</span><span style="color:#fff;">TZY</span></span> adalah konsep ruang otomotif yang menggabungkan karakter kendaraan, desain, teknologi, dan pengalaman pelanggan dalam satu kesatuan. Kami menghadirkan dunia otomotif sebagai tempat untuk mengenal berbagai pilihan kendaraan dengan keunggulan dan ciri khas masing-masing.
+        </p>
+
+        <p>
+            Kami percaya bahwa mobil impian bukan hanya tentang spesifikasi, harga, atau performa mesin, tetapi juga tentang cerita, gaya hidup, dan kebanggaan di balik setiap pilihan. Setiap kendaraan memiliki daya tarik tersendiri yang mampu mencerminkan kepribadian pemiliknya.
+        </p>
+
+        <p>
+            Dunia otomotif terus berkembang dengan menghadirkan berbagai inovasi, mulai dari desain modern, teknologi canggih, hingga performa mesin yang semakin mengesankan. Hal inilah yang membuat setiap kendaraan memiliki nilai dan pengalaman berkendara yang berbeda.
+        </p>
+
+        <p>
+            Melalui <span style="background:#171717; padding:2px 5px;">
+            <span style="color:#f51823;">Syuhada</span><span style="color:#fff;">TZY</span></span>, kami ingin memberikan inspirasi bagi para pecinta otomotif untuk menjelajahi berbagai desain kendaraan, mengenal keunggulan setiap mobil, dan menemukan pilihan yang sesuai dengan kebutuhan maupun impian mereka.
+        </p>
+
+        <p>
+            Bagi kami, setiap mobil memiliki cerita dan setiap perjalanan menyimpan pengalaman berharga. <span style="background:#171717; padding:2px 5px;"><span style="color:#f51823;">Syuhada</span><span style="color:#fff;">TZY</span></span> hadir untuk menjadi bagian dari perjalanan tersebut dengan menghadirkan inspirasi otomotif yang modern, elegan, dan penuh karakter.
+        </p>
+    </div>
+
+    <div class="about-image">
+        <img src="image/Luxury POTRET.png"
+             alt="Luxury Showroom SyuhadaTZY">
+    </div>
+
+</section>
+
+<!-- PENUTUP -->
+<section class="closing" id="kontak">
+    <small>RUANG UNTUK PERJALANAN BARU</small>
+
+    <h2>
+        Setiap perjalanan punya cerita.<br>
+        <em>Sekarang, tulis ceritamu.</em>
+    </h2>
+
+    <a href="Utama.html">
+        Next Info To SyuhadaTZY ↗
+    </a>
+</section>
+
+<!-- FOOTER -->
+<div class="container">
+<footer>
+    <a href="#home" class="logo">
+        syuhada<span>TZY.</span>
+    </a>
+
+    <p>Drive your dreams · Automotive journal</p>
+
+    <a href="#home" class="link">Kembali ke atas ↑</a>
+</footer>
+</div>
+
+</body>
+</html>
