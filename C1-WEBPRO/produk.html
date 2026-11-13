@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Mobil SyuhadaTZY</title>
+
+<style>
+
+/* =========================
+  Bahan RESET DAN BACKGROUND
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ffffff;
+    color: #171717;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.7;
+}
+
+.container {
+    width: 92%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* =========================
+  1 Bahan HEADER BRAND
+========================= */
+
+.brand {
+    text-align: center;
+    padding: 40px 15px;
+    background: #ffffff;
+}
+
+.brand h1 {
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 7px;
+    color: #111111;
+}
+
+.brand h1 span {
+    color: #a00028;
+}
+
+.brand h2 {
+    font-size: 19px;
+    letter-spacing: 9px;
+    color: #a00028;
+    margin-top: 5px;
+}
+
+.brand p {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #777777;
+    margin-top: 12px;
+}
+
+/* =========================
+  2 Bahan NAVIGASI
+========================= */
+
+.navigation {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.navigation .container {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    padding: 16px;
+}
+
+.navigation a {
+    position: relative;
+    text-decoration: none;
+    color: #222222;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #a00028;
+    transition: 0.4s;
+}
+
+.navigation a:hover {
+    color: #a00028;
+}
+
+.navigation a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+  3 Bahan PRODUCT DISCOVER
+========================= */
+
+.hero {
+    position: relative;
+    margin: 35px auto;
+    min-height: 320px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(
+        120deg,
+        #171717,
+        #470018,
+        #111111
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    padding: 35px;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 42px;
+    letter-spacing: 6px;
+    font-weight: 900;
+}
+
+.hero h2 span {
+    color: #e5bd70;
+}
+
+.hero p {
+    margin-top: 12px;
+    color: #dddddd;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.hero a {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: #a00028;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+
+.hero a:hover {
+    background: #e5bd70;
+    color: #111111;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(229,189,112,0.6);
+}
+
+/* =========================
+  4 Bahan JUDUL PRODUK
+========================= */
+
+.section-title {
+    text-align: center;
+    margin: 65px 0 35px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    letter-spacing: 5px;
+    color: #171717;
+}
+
+.section-title h2 span {
+    color: #a00028;
+}
+
+.section-title p {
+    font-size: 13px;
+    color: #888888;
+    letter-spacing: 3px;
+    margin-top: 8px;
+}
+
+/* =========================
+  5 Bahan GRID PRODUK GAMBAR DAN TEKS
+========================= */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 80px;
+}
+
+/* KARTU PRODUK */
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+    transition: all 0.5s ease;
+}
+
+/* HOVER KARTU */
+
+.product-card:hover {
+    transform: translateY(-12px);
+    border-color: #a00028;
+
+    box-shadow:
+        0 0 10px rgba(160,0,40,0.2),
+        0 0 25px rgba(160,0,40,0.15),
+        0 18px 35px rgba(0,0,0,0.13);
+}
+
+/* EFEK CAHAYA MENGKILAP */
+
+.product-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.9),
+        transparent
+    );
+
+    transform: skewX(-25deg);
+    transition: 0.8s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.product-card:hover::before {
+    left: 150%;
+}
+
+/* GAMBAR PRODUK */
+
+.product-image {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+    filter: brightness(1.08);
+}
+
+/* LABEL NOMOR PRODUK */
+
+.product-number {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 4px 15px;
+    color: #a00028;
+    background: #fff0f3;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* NAMA MOBIL */
+
+.product-card h3 {
+    color: #171717;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 12px 0;
+    transition: 0.3s;
+}
+
+.product-card:hover h3 {
+    color: #a00028;
+}
+
+/* DESKRIPSI */
+
+.product-card p {
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.8;
+    min-height: 48px;
+    margin-bottom: 15px;
+}
+
+.product-card b {
+    color: #a00028;
+}
+
+/* TOMBOL PRODUK */
+
+.product-card a {
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+
+    margin: 12px 0 5px;
+    padding: 11px 25px;
+
+    background: #171717;
+    color: white;
+
+    border: 1px solid #a00028;
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.product-card a:hover {
+    background: #a00028;
+    color: white;
+    transform: scale(1.07);
+
+    box-shadow:
+        0 0 12px rgba(160,0,40,0.5),
+        0 0 25px rgba(160,0,40,0.3);
+}
+
+/* =========================
+  6 Bahan PROMOSI FIND YOUR DREAM
+========================= */
+
+.promo {
+    text-align: center;
+    padding: 55px 25px;
+    margin: 70px 0;
+
+    background: linear-gradient(
+        135deg,
+        #171717,
+        #470018,
+        #171717
+    );
+
+    border-radius: 15px;
+    color: white;
+}
+
+.promo h2 {
+    font-size: 30px;
+    letter-spacing: 4px;
+}
+
+.promo h2 span {
+    color: #e5bd70;
+}
+
+.promo p {
+    color: #cccccc;
+    margin-top: 12px;
+}
+
+.promo a {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 12px 28px;
+    color: #171717;
+    background: #e5bd70;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+
+.promo a:hover {
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+/* =========================
+  7 Bahan FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+    padding: 35px 15px;
+    background: #ffffff;
+    border-top: 1px solid #eeeeee;
+}
+
+.footer h2 {
+    font-size: 23px;
+    letter-spacing: 3px;
+    color: #171717;
+}
+
+.footer h2 span {
+    color: #a00028;
+}
+
+.footer p {
+    font-size: 12px;
+    color: #888888;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .brand h1 {
+        font-size: 35px;
+    }
+
+    .brand h2 {
+        font-size: 14px;
+        letter-spacing: 5px;
+    }
+
+    .navigation .container {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .navigation a {
+        font-size: 11px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .brand h1 {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+
+    .navigation .container {
+        gap: 15px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+        letter-spacing: 3px;
+    }
+
+    .hero p {
+        font-size: 11px;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 1 HEADER -->
+
+<header class="brand">
+
+    <h1>SYUHADA<span>TZY</span></h1>
+
+    <h2>CAR PRODUCT</h2>
+
+    <p>
+        PREMIUM COLLECTION | SPORT CAR | HYPERCAR
+    </p>
+
+</header>
+
+<!-- 2 NAVIGASI -->
+
+<nav class="navigation">
+
+    <div class="container">
+
+       <a href="Utama.html">HOME</a>
+        <a href="index.html">ABOUT</a>
+        <a href="Utama.html#gallery">GALLERY</a>
+        <a href="#product">PRODUCT</a>
+        <a href="spek.html">SPECIFICATION</a>
+        <a href="lokasi.html">LOCATION</a>
+        <a href="berita.html">NEWS</a>
+        <a href="layanan.html">SERVICE</a>
+        <a href="booking.html">BOOKING</a>
+        <a href="Utama.html#kontak">CONTACT</a>
+
+    </div>
+
+</nav>
+
+<main class="container">
+
+<!-- 3 HERO DISCOVER -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h2>DISCOVER YOUR <span>DREAM CAR</span></h2>
+
+        <p>
+            EXPLORE THE WORLD OF LUXURY AUTOMOTIVE
+        </p>
+
+        <a href="#product">EXPLORE PRODUCT</a>
+
+    </div>
+
+</section>
+
+<!-- 4 JUDUL PRODUK -->
+
+<section id="product">
+
+    <div class="section-title">
+
+        <h2>OUR <span>CAR PRODUCT</span></h2>
+
+        <p>
+            EXCLUSIVE COLLECTION OF LUXURY CARS
+        </p>
+
+    </div>
+
+    <!-- DETAIL KATALOG SETIAP MOBIL -->
+
+    <div class="products">
+
+        <!-- APOLLO -->
+
+        <article class="product-card">
+
+            <img class="product-image"
+                 src="image/apollo nw.jpg"
+                 alt="Apollo">
+
+            <span class="product-number">01 / COLLECTION</span>
+
+            <h3>APOLLO</h3>
+
+            <p>
+                Mobil sport dengan desain modern
+                dan elegan.
+            </p>
+
+            <p><b>Premium Collection</b></p>
+
+            <a href="utama.html#kontak">TANYAKAN DETAIL</a>
+
+        </article>
+
+        <!-- BUGATTI -->
+
+        <article class="product-card">
+
+            <img class="product-image"
+                 src="image/bugatti nw.jpg"
+                 alt="Bugatti">
+
+            <span class="product-number">02 / COLLECTION</span>
+
+            <h3>BUGATTI</h3>
+
+            <p>
+                Performa tinggi dengan tampilan
+                premium dan eksklusif.
+            </p>
+
+            <p><b>Premium Collection</b></p>
+
+            <a href="utama.html#kontak">TANYAKAN DETAIL</a>
+
+        </article>
+
+        <!-- FERRARI -->
+
+        <article class="product-card">
+
+            <img class="product-image"
+                 src="image/ferrari nw.jpg"
+                 alt="Ferrari">
+
+            <span class="product-number">03 / COLLECTION</span>
+
+            <h3>FERRARI</h3>
+
+            <p>
+                Mobil sporty dengan karakter
+                yang kuat dan berkelas.
+            </p>
+
+            <p><b>Premium Collection</b></p>
+
+            <a href="utama.html#kontak">TANYAKAN DETAIL</a>
+
+        </article>
+
+        <!-- KOENIGSEGG -->
+
+        <article class="product-card">
+
+            <img class="product-image"
+                 src="image/koegnisegg nw.jpg"
+                 alt="Koenigsegg">
+
+            <span class="product-number">04 / COLLECTION</span>
+
+            <h3>KOENIGSEGG</h3>
+
+            <p>
+                Supercar berteknologi tinggi
+                dengan kecepatan luar biasa.
+            </p>
+
+            <p><b>Premium Collection</b></p>
+
+            <a href="utama.html#kontak">TANYAKAN DETAIL</a>
+
+        </article>
+
+        <!-- LAMBORGHINI -->
+
+        <article class="product-card">
+
+            <img class="product-image"
+                 src="image/lamborghini nw.jpg"
+                 alt="Lamborghini">
+
+            <span class="product-number">05 / COLLECTION</span>
+
+            <h3>LAMBORGHINI</h3>
+
+            <p>
+                Desain agresif dengan performa
+                yang mengesankan.
+            </p>
+
+            <p><b>Premium Collection</b></p>
+
+            <a href="utama.html#kontak">TANYAKAN DETAIL</a>
+
+        </article>
+
+        <!-- MCLAREN -->
+
+        <article class="product-card">
+
+            <img class="product-image"
+                 src="image/mclaren nw.jpg"
+                 alt="McLaren">
+
+            <span class="product-number">06 / COLLECTION</span>
+
+            <h3>MCLAREN</h3>
+
+            <p>
+                Supercar dengan desain
+                aerodinamis dan sporty.
+            </p>
+
+            <p><b>Premium Collection</b></p>
+
+            <a href="utama.html#kontak">TANYAKAN DETAIL</a>
+
+        </article>
+
+        <!-- PAGANI -->
+
+        <article class="product-card">
+
+            <img class="product-image"
+                 src="image/pagani nw.jpg"
+                 alt="Pagani">
+
+            <span class="product-number">07 / COLLECTION</span>
+
+            <h3>PAGANI</h3>
+
+            <p>
+                Supercar eksklusif dengan
+                detail dan desain mewah.
+            </p>
+
+            <p><b>Premium Collection</b></p>
+
+            <a href="utama.html#kontak">TANYAKAN DETAIL</a>
+
+        </article>
+
+        <!-- SSC TUATARA -->
+
+        <article class="product-card">
+
+            <img class="product-image"
+                 src="image/ssc tuatara nw.jpg"
+                 alt="SSC Tuatara">
+
+            <span class="product-number">08 / COLLECTION</span>
+
+            <h3>SSC TUATARA</h3>
+
+            <p>
+                Supercar berdesain futuristik
+                dan berkecepatan tinggi.
+            </p>
+
+            <p><b>Premium Collection</b></p>
+
+            <a href="utama.html#kontak">TANYAKAN DETAIL</a>
+
+        </article>
+
+        <!-- HENNESSEY -->
+
+        <article class="product-card">
+
+            <img class="product-image"
+                 src="image/hennessey.jpg"
+                 alt="Hennessey">
+
+            <span class="product-number">09 / COLLECTION</span>
+
+            <h3>HENNESSEY</h3>
+
+            <p>
+                Supercar bertenaga tinggi
+                dengan tampilan premium.
+            </p>
+
+            <p><b>Premium Collection</b></p>
+
+            <a href="utama.html#kontak">TANYAKAN DETAIL</a>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- 5 PROMOSI -->
+
+<section class="promo">
+
+    <h2>FIND YOUR <span>DREAM CAR</span></h2>
+
+    <p>
+        Quality Cars | Premium Collection | Trusted Service
+    </p>
+
+    <a href="utama.html#kontak">
+        CONTACT SHOWROOM
+    </a>
+
+</section>
+
+</main>
+
+<!-- 6 FOOTER -->
+
+<footer class="footer">
+
+    <h2>SHOWROOM <span>SYUHADATZY</span></h2>
+
+    <p>
+        Quality Cars | Premium Collection | Trusted Service
+    </p>
+
+    <p>
+        © 2026 SyuhadaTZY. All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>
